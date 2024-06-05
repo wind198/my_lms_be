@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "generations",
+  "info": {
+    "singularName": "generation",
+    "pluralName": "generations",
+    "displayName": "generation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "index": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 0
+    },
+    "note": {
+      "type": "text"
+    },
+    "major_classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::major-class.major-class",
+      "mappedBy": "generation"
+    }
+  }
+}

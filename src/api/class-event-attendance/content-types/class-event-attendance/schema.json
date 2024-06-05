@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_event_attendances",
+  "info": {
+    "singularName": "class-event-attendance",
+    "pluralName": "class-event-attendances",
+    "displayName": "Class event attendance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "on time",
+        "late",
+        "permission late",
+        "off"
+      ],
+      "default": "on time",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "class_event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-event.class-event",
+      "inversedBy": "class_event_attendances"
+    }
+  }
+}

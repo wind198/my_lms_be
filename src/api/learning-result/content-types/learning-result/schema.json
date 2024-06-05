@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learning_results",
+  "info": {
+    "singularName": "learning-result",
+    "pluralName": "learning-results",
+    "displayName": "Learning result"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    },
+    "component_average": {
+      "type": "decimal",
+      "required": true,
+      "max": 10,
+      "min": 0
+    },
+    "final_average": {
+      "type": "decimal",
+      "max": 10,
+      "min": 0,
+      "required": true
+    },
+    "rank": {
+      "type": "enumeration",
+      "enum": [
+        "bad",
+        "normal",
+        "good",
+        "very good",
+        "excellent"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pass",
+        "test_again",
+        "learn_again"
+      ],
+      "required": true
+    }
+  }
+}

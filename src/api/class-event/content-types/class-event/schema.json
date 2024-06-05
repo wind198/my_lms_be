@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_events",
+  "info": {
+    "singularName": "class-event",
+    "pluralName": "class-events",
+    "displayName": "Class event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    },
+    "room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::room.room"
+    },
+    "note": {
+      "type": "text"
+    },
+    "class_event_attendances": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-event-attendance.class-event-attendance",
+      "mappedBy": "class_event"
+    }
+  }
+}

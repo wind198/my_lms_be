@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "final_mark_sheets",
+  "info": {
+    "singularName": "final-mark-sheet",
+    "pluralName": "final-mark-sheets",
+    "displayName": "Final mark sheet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "mark_elements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mark-element.mark-element",
+      "mappedBy": "final_mark_sheet"
+    },
+    "assigned_teacher": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "major_classes",
+  "info": {
+    "singularName": "major-class",
+    "pluralName": "major-classes",
+    "displayName": "Major class"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "generation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::generation.generation",
+      "inversedBy": "major_classes"
+    },
+    "major": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::major.major"
+    }
+  }
+}

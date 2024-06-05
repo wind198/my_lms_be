@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marks",
+  "info": {
+    "singularName": "mark",
+    "pluralName": "marks",
+    "displayName": "Mark",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_mark": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-mark.course-mark"
+    },
+    "value": {
+      "type": "decimal",
+      "max": 10,
+      "min": 0,
+      "default": 0,
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "last_updated_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mark_elements",
+  "info": {
+    "singularName": "mark-element",
+    "pluralName": "mark-elements",
+    "displayName": "Mark element"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "decimal",
+      "max": 10,
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "course_mark_element": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-mark-element.course-mark-element"
+    },
+    "course_mark": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-mark.course-mark"
+    },
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "last_updated_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "final_mark_sheet": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::final-mark-sheet.final-mark-sheet",
+      "inversedBy": "mark_elements"
+    }
+  }
+}
